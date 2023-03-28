@@ -4,6 +4,7 @@ const ReviewModel = require("../models/reviewModel");
 const moment = require("moment");
 
 const Validations = require("../validations/validation");
+const booksModel = require("../models/booksModel");
 
 const createBooks = async function (req, res) {
   try {
@@ -188,6 +189,7 @@ const   getBooksData = async function (req, res) {
       category: 1,
       releasedAt: 1,
       reviews: 1,
+      img:1
     };
 
     let Booksdata = await BooksModel.find({
@@ -261,6 +263,10 @@ const getBooksDataWithReviews = async function (req, res) {
 
 const updateBooksData = async function (req, res) {
   try {
+
+
+
+    
     let bookId = req.params.bookId;
 
     if (!Validations.isValidId(bookId)) {

@@ -34,7 +34,11 @@ const reviewSchema= new mongoose.Schema({
         isDeleted:{
             type:Boolean,
             default:false
-        }  
+        },
+        img:{
+            type:String
+        }
+
 
 },{timestamps:true});
 

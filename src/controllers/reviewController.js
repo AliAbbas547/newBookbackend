@@ -145,6 +145,9 @@ const createReview = async function (req, res) {
 
 const  updateReviews = async function (req, res) {
   try {
+
+    let newOne= await ReviewModel.updateMany({isDeleted:false},{$set:{img:"https://source.unsplash.com/random/?books"}})
+    return res.status(200).send({msg:"done",data:newOne})
     const data = req.body;
     if (Object.keys(data).length == 0) {
       return res
