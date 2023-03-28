@@ -1,13 +1,13 @@
 const express= require("express")
 const route= require("./routes/route.js")
 const {default:mongoose}= require("mongoose")
-const multer=require("multer")
+// const multer=require("multer")
 const cors= require('cors')
 
 const app= express()
 
 app.use(express.json())
-app.use(multer().any())
+// app.use(multer().any())
 
 app.use(
     function(req,res,next){
